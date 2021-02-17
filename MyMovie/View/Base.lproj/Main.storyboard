@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Cnw-Mc-ijj">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Popular Movies-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MoviesViewController" customModule="MyMovie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TeN-cg-PVj">
+                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
+                                <color key="backgroundColor" red="0.058823529409999999" green="0.18823529410000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="vd8-tF-9ex">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <color key="backgroundColor" red="0.0" green="0.34509803919999998" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.058823529409999999" green="0.18823529410000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TeN-cg-PVj" secondAttribute="trailing" id="0ny-oD-Ieg"/>
+                            <constraint firstItem="vd8-tF-9ex" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2Tp-3g-xRM"/>
+                            <constraint firstItem="vd8-tF-9ex" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BXX-I7-nTf"/>
+                            <constraint firstItem="TeN-cg-PVj" firstAttribute="top" secondItem="vd8-tF-9ex" secondAttribute="bottom" id="Gb5-aP-q1i"/>
+                            <constraint firstItem="TeN-cg-PVj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RHD-TQ-iCQ"/>
+                            <constraint firstItem="vd8-tF-9ex" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="SIQ-FD-qS0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TeN-cg-PVj" secondAttribute="bottom" id="pGa-oR-K03"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Popular Movies" id="7he-d3-lVq">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="Wow-fH-Lwz"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="movieTableView" destination="TeN-cg-PVj" id="k8j-gQ-fKS"/>
+                        <outlet property="searchrBar" destination="vd8-tF-9ex" id="Q4N-9d-Gdk"/>
+                        <segue destination="Eoo-a3-vPI" kind="show" identifier="DetailViewController" id="4fO-K6-tL4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="907" y="73"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="bdc-iS-tro">
+            <objects>
+                <viewController id="Eoo-a3-vPI" customClass="DetailViewController" customModule="MyMovie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="snc-ge-I0H">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="BJA-hv-iCn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Bto-lc-b91"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g5p-tL-sYS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1654" y="73"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ulj-VE-qRD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cnw-Mc-ijj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="B7l-Wc-6AZ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.90588235294117647" green="0.90588235294117647" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.058823529411764705" green="0.18823529411764706" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.90588235294117647" green="0.90588235294117647" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="uW0-u5-d6v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BEB-9P-Qt5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="72.991071428571431"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
