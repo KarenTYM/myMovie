@@ -11,11 +11,12 @@ class MoviesViewController: UIViewController {
     
     @IBOutlet weak var searchrBar: UISearchBar!
     @IBOutlet weak var movieTableView: UITableView!
+    @IBOutlet weak var cleanSearchButton: UIButton!
     
     private var movieArray:[PopularMovie]?
     private var page:Int = 1
     private var totalPages:Int = 0
-    
+    private var moviesController:MoviesController?
     
     // MARK: - viewDidLoad
     override func viewDidLoad() {
@@ -57,6 +58,12 @@ class MoviesViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func cleanSearchButtonTapped(_ sender: UIButton) {
+        self.fetchMovies()
+        self.movieTableView.reloadData()
+    }
+    
 }
 
 
